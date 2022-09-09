@@ -183,6 +183,7 @@ header .burger-button div {
     right: -100px;
     top: 70px;
     padding: 20px;
+    background-color: var(--body-color);
   }
 }
 header nav ul {
