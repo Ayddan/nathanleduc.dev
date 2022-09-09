@@ -1,0 +1,128 @@
+@import './reset';
+@import './header';
+@import './hero';
+@import './timeline';
+@import './projects';
+
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+// Themes colors
+.dark{
+    --body-color: #202023;
+    --text-color: #DDDDDD;
+}
+
+.light{
+    --body-color: #F9F9F9;
+    --text-color: #202023;
+}
+
+body *{
+    transition: .1s color, .3s background-color;
+}
+
+// body{
+//     overflow-x: hidden;
+// }
+
+.App{
+    background-color: var(--body-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    // overflow-x: hidden;
+}
+
+.container{
+    max-width: 1400px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.flex-center{
+    display: flex;
+    align-items: center;
+}
+
+.text-box{
+    position: relative;
+    overflow: hidden;
+}
+
+.separator{
+    background-color: var(--text-color);
+    height: 2px;
+    width: 115%;
+    position: relative;
+    left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 100%;
+    border: none;
+}
+
+.title-with-decoration{
+    position: relative;
+    font-size: 35px;
+    font-weight: bold;
+    display: inline;
+    @media screen and (max-width: 750px) {
+        font-size: 25px;
+    }
+}
+
+.title-wrapper{
+    width: fit-content;
+}
+
+.button-1{
+    background-color: #FC8166;
+    color: var(--text-color);
+    padding: 5px 40px;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: .3s background-color;
+    &:hover{
+        background-color: #dd7159;
+    }
+    @media screen and (max-width: 750px) {
+        font-size: 18px;
+    }
+}
+
+.toogle-theme{
+    background-color: hsl(0deg 0% 0% / 68%);
+    border-radius: 10px;
+    border: none;
+    // width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div{
+        width: 35px;
+        height: 35px;
+    }
+    &.dark{
+        background-color: hsl(0deg 0% 0% / 68%);
+    }
+    &.dark{
+        background-color: hsl(0deg 0% 0% / 68%);
+    }
+}
+
+svg circle.animated,
+svg path.animated{
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1s ease; 
+}
+
+svg path.timeline-logo{
+    opacity: 0;
+    transition: .5s opacity;
+}

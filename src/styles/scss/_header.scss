@@ -1,0 +1,77 @@
+header{
+    backdrop-filter: blur(20px);
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    padding: 20px 0;
+    .App-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .site-title{
+        text-transform: capitalize;
+        font-size: 25px;
+        @media screen and (max-width:750px) {
+            font-size: 20px;
+        }
+    }
+    .burger-button{
+        display: none;
+        background: none;
+        border: none;
+        div{
+            width: 50px;
+        }
+        @media screen and (max-width: 750px){
+            display: block;
+        }
+    }
+    nav{
+        @media screen and (max-width: 750px) {
+            position: absolute;
+            right: -100px;
+            top: 70px;
+            padding: 20px;
+        }
+        ul{
+            display: flex;
+            column-gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            @media screen and (max-width: 750px) {
+                flex-direction: column;
+                row-gap: 20px;
+            }
+            li{
+                display: flex;
+                align-items: center;
+            }
+        }
+        a{
+            position: relative;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 18px;
+            &::after{
+                content: '';
+                position: absolute;
+                left: 0;
+                top: calc(100% + 1px);
+                width: 0;
+                height: 2px;
+                background-color: var(--text-color);
+                transition: .3s width ease-in-out;
+            }
+            &:hover{
+                &::after{
+                    left: inherit;
+                    right: 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
