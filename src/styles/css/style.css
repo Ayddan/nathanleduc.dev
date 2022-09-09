@@ -181,7 +181,7 @@ header .burger-button div {
   header nav {
     position: absolute;
     right: -100px;
-    top: 98px;
+    top: 100px;
     padding: 20px;
     background-color: var(--body-color);
   }
