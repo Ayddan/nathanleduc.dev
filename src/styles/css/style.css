@@ -149,6 +149,7 @@ header {
   z-index: 5;
   width: 100%;
   padding: 20px 0;
+  overflow-x: hidden;
 }
 header .App-header {
   display: flex;
