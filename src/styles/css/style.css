@@ -144,12 +144,11 @@ a[href^=tel] {
 }
 header {
   backdrop-filter: blur(20px);
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 5;
   width: 100%;
   padding: 20px 0;
-  overflow-x: hidden;
 }
 header .App-header {
   display: flex;
@@ -474,6 +473,7 @@ body * {
   color: var(--text-color);
   min-height: 100vh;
   font-family: "Open Sans", sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
