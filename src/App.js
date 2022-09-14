@@ -121,10 +121,10 @@ function App() {
             <a className='project-name' target='_blank' href='https://schertz.fr/'>Schertz.fr (Réalisé au sein de Ackwa)</a>
           </li>
           <li className='project-card'>
-            <a className='project-illustration' target='_blank' href='https://todo-app-three-sable.vercel.app/'>
-              <img src={todoApp}/>
+            <a className='project-illustration' target='_blank' href='http://tomleduc.fr/'>
+              <img src={tomleduc}/>
             </a>
-            <a className='project-name' target='_blank' href='https://todo-app-three-sable.vercel.app/'>Todo app</a>
+            <a className='project-name' target='_blank' href='http://tomleduc.fr/'>tomleduc.fr</a>
           </li>
           <li className='project-card'>
             <a className='project-illustration' href='#'>
@@ -133,10 +133,10 @@ function App() {
             <a className='project-name' href='#'>CefimVote (Non disponible)</a>
           </li>
           <li className='project-card'>
-            <a className='project-illustration' target='_blank' href='http://tomleduc.fr/'>
-              <img src={tomleduc}/>
+            <a className='project-illustration' target='_blank' href='https://todo-app-three-sable.vercel.app/'>
+              <img src={todoApp}/>
             </a>
-            <a className='project-name' target='_blank' href='http://tomleduc.fr/'>tomleduc.fr</a>
+            <a className='project-name' target='_blank' href='https://todo-app-three-sable.vercel.app/'>Todo app</a>
           </li>
           <li className='project-card'>
             <a className='project-illustration' target='_blank' href='https://flinbu-oognd9w6y-ayddan.vercel.app/'>
