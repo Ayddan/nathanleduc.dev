@@ -9,6 +9,7 @@ import todoApp from './assets/jpg/todo.jpg';
 import cefimVote from './assets/jpg/cefimvote.jpg';
 import tomleduc from './assets/jpg/tom-leduc.jpg';
 import flinbu from './assets/jpg/flinbu.jpg';
+import scrollGame from './assets/jpg/scroll-game.jpg';
 
 // Components
 import Timeline from './components/Timeline';
@@ -143,6 +144,12 @@ function App() {
               <img src={flinbu}/>
             </a>
             <a className='project-name' target='_blank' href='https://flinbu-oognd9w6y-ayddan.vercel.app/'>Flinbu</a>
+          </li>
+          <li className='project-card'>
+            <a className='project-illustration' target='_blank' href='https://scroll-game-ten.vercel.app/'>
+              <img src={scrollGame}/>
+            </a>
+            <a className='project-name' target='_blank' href='https://scroll-game-ten.vercel.app/'>Flinbu</a>
           </li>
         </ul>
       </section>
