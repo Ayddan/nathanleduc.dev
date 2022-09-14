@@ -419,7 +419,7 @@ header nav a:hover::after {
   transition: transform 0.3s;
 }
 .project-card:hover {
-  transform: translateY(20px);
+  transform: translateY(10px);
 }
 .project-card .project-illustration {
   display: block;

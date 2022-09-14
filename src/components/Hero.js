@@ -8,6 +8,8 @@ import youtubeDarkSvg from '../assets/svg/youtube-dark.svg';
 import twitterLightSvg from '../assets/svg/twitter-light.svg';
 import linkedinLightSvg from '../assets/svg/linkedin-light.svg';
 import youtubeLightSvg from '../assets/svg/youtube-light.svg';
+import githubDarkSvg from '../assets/svg/github-dark.svg';
+import githubLightSvg from '../assets/svg/github-light.svg';
 
 const Hero = (props) => {
     useEffect(()=>{
@@ -54,6 +56,11 @@ const Hero = (props) => {
                 <li>
                     <a target='_blank' href='https://www.linkedin.com/in/nathan-leduc-349561146/'>
                         <img src={props.theme === 'light' ?  linkedinLightSvg : linkedinDarkSvg}/>
+                    </a>
+                </li>
+                <li>
+                    <a target='_blank' href='https://github.com/Ayddan'>
+                        <img src={props.theme === 'light' ?  githubLightSvg : githubDarkSvg}/>
                     </a>
                 </li>
                 {/* <li>
