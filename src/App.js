@@ -149,7 +149,7 @@ function App() {
             <a className='project-illustration' target='_blank' href='https://scroll-game-ten.vercel.app/'>
               <img src={scrollGame}/>
             </a>
-            <a className='project-name' target='_blank' href='https://scroll-game-ten.vercel.app/'>Flinbu</a>
+            <a className='project-name' target='_blank' href='https://scroll-game-ten.vercel.app/'>Scroll game</a>
           </li>
         </ul>
       </section>
