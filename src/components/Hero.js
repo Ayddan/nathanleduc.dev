@@ -42,7 +42,7 @@ const Hero = (props) => {
                 </div>
             </div>
             <div className='hero-buttons flex-center'>
-                <a className='button-1' href='#projects'>Projects</a>
+                <a className='button-1' href='#projects'>Projets</a>
                 <a className='button-1' href='mailto:nathanleduc.dev@gmail.com'>Contact</a>
             </div>
             <ul className='social-list'>
@@ -56,11 +56,11 @@ const Hero = (props) => {
                         <img src={props.theme === 'light' ?  linkedinLightSvg : linkedinDarkSvg}/>
                     </a>
                 </li>
-                <li>
+                {/* <li>
                     <a>
                         <img src={props.theme === 'light' ?  youtubeLightSvg : youtubeDarkSvg}/>
                     </a>
-                </li>
+                </li> */}
             </ul>
             </div>
             <img className='hero-avatar' src={nathanImg} alt='Photo de Nathan'/>

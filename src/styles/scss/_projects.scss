@@ -1,4 +1,9 @@
 .project-card{
+    transform: translateY(0px);
+    transition: transform .3s;
+    &:hover{
+        transform: translateY(20px);
+    }
     .project-illustration{
         display: block;
         border-radius: 10px;

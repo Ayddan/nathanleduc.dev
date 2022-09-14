@@ -127,17 +127,17 @@ const Timeline = () => {
                         <p className="timeline-paragraphe"></p>
                     </li>
                     <li ref={firstWork} id='first-work'>
-                        <h2 className="timeline-title">Developpeur web</h2>
+                        <h2 className="timeline-title">Développeur web</h2>
                         <span className="timeline-subtitle">Ackwa - Tours</span>
                         <span className="timeline-date">Juin 2021 - Juillet 2022</span>
                         <p className="timeline-paragraphe">Dévelopement/maintenance de solutions/site web sur les CMS et Wordpress. Passage de version sur applications PHP Symfony Evaluations des projets et veille technique.
                         Accompagnement des clients</p>
                     </li>
                     <li ref={freelance} id='freelance'>
-                        <h2 className="timeline-title">Developpeur web Freelance</h2>
+                        <h2 className="timeline-title">Développeur web Freelance</h2>
                         <span className="timeline-subtitle">Tours - Remote</span>
                         <span className="timeline-date">Juillet 2022 - Aujourd'hui</span>
-                        <p className="timeline-paragraphe">Ecrivons la suite enssemble</p>
+                        <p className="timeline-paragraphe">Ecrivons la suite ensemble</p>
                     </li>
                 </ul>
             </div>
