@@ -235,6 +235,8 @@ header nav a:hover::after {
 }
 .hero .hero-avatar {
   max-width: 400px;
+  height: 400px;
+  object-fit: cover;
   border-radius: 50%;
 }
 @media screen and (max-width: 950px) {

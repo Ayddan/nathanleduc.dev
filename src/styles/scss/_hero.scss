@@ -6,6 +6,8 @@
     margin-bottom: 350px;
     .hero-avatar{
         max-width: 400px;
+        height: 400px;
+        object-fit: cover;
         border-radius: 50%;
         @media screen and (max-width: 950px) {
             display: none;
