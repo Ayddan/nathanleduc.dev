@@ -14,6 +14,7 @@ import scrollGame from './assets/jpg/scroll-game.jpg';
 // Components
 import Timeline from './components/Timeline';
 import Hero from './components/Hero';
+import ContactForm from './components/ContactForm';
 
 // Lottie
 import * as toogleThemeData from './assets/lottie/toogle-theme.json';
@@ -21,6 +22,7 @@ import * as burgerButtonData from './assets/lottie/burger-button.json';
 import * as burgerButtonDarkData from './assets/lottie/burger-button-dark.json';
 
 function App() {
+  console.log(process.env.REACT_APP_SMTP_PASSWORD)
   const [theme,setTheme] = useState('dark')
   const [play,setPlay] = useState(false)
   const [direction,setDirection] = useState(-1)
@@ -152,6 +154,13 @@ function App() {
             <a className='project-name' target='_blank' href='https://scroll-game-ten.vercel.app/'>Scroll game</a>
           </li>
         </ul>
+      </section>
+      <section className='container' id='contact'>
+        <div className='title-wrapper'>
+            <h2 className='hero-title title-with-decoration'>Contact</h2>
+            <hr className="separator"/>
+        </div>
+        <ContactForm/>
       </section>
     </div>
   );
