@@ -45,7 +45,7 @@ const Hero = (props) => {
             </div>
             <div className='hero-buttons flex-center'>
                 <a className='button-1' href='#projects'>Projets</a>
-                <a className='button-1' href='mailto:nathanleduc.dev@gmail.com'>Contact</a>
+                <a className='button-1' href='#contact'>Contact</a>
             </div>
             <ul className='social-list'>
                 <li>

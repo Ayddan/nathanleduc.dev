@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 const ContactForm = () => {
-    const [status, setStatus] = useState("Submit");
+    const [status, setStatus] = useState("Envoyer");
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setStatus("Sending...");
+        setStatus("Envoi...");
         const { name, email, message } = e.target.elements;
         let details = {
             name: name.value,
@@ -18,25 +18,27 @@ const ContactForm = () => {
             },
             body: JSON.stringify(details),
         });
-        setStatus("Submit");
+        setStatus("Envoyer");
         let result = await response.json();
         alert(result.status);
     };
   return (
-        <form onSubmit={handleSubmit}>
-        <div>
-            <label htmlFor="name">Name:</label>
-            <input type="text" id="name" required />
-        </div>
-        <div>
-            <label htmlFor="email">Email:</label>
-            <input type="email" id="email" required />
-        </div>
-        <div>
-            <label htmlFor="message">Message:</label>
-            <textarea id="message" required />
-        </div>
-        <button type="submit">{status}</button>
+        <form className="contact-form" onSubmit={handleSubmit}>
+            <div className="form-row">
+                <div className="form-group">
+                    <label htmlFor="name">Nom / Entreprise</label>
+                    <input type="text" id="name" required/>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" id="email" required/>
+                </div>
+            </div>
+            <div className="form-group">
+                <label htmlFor="message">Message</label>
+                <textarea id="message" required />
+            </div>
+            <button className="button-1" type="submit">{status}</button>
         </form>
     )
 }

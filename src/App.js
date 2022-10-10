@@ -22,7 +22,6 @@ import * as burgerButtonData from './assets/lottie/burger-button.json';
 import * as burgerButtonDarkData from './assets/lottie/burger-button-dark.json';
 
 function App() {
-  console.log(process.env.REACT_APP_SMTP_PASSWORD)
   const [theme,setTheme] = useState('dark')
   const [play,setPlay] = useState(false)
   const [direction,setDirection] = useState(-1)
@@ -80,7 +79,7 @@ function App() {
                 <a href='#journey'>Parcours</a>
               </li>
               <li>
-                <a href='mailto:nathanleduc.dev@gmail.com'>Contact</a>
+                <a href='#contact'>Contact</a>
               </li>
               <li>
                 <button className='toogle-theme' onClick={()=>{toogleTheme()}}>
@@ -157,7 +156,7 @@ function App() {
       </section>
       <section className='container' id='contact'>
         <div className='title-wrapper'>
-            <h2 className='hero-title title-with-decoration'>Contact</h2>
+            <h2 className='hero-title title-with-decoration'>Me contacter</h2>
             <hr className="separator"/>
         </div>
         <ContactForm/>
