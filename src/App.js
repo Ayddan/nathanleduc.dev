@@ -25,7 +25,6 @@ function App() {
   const [theme,setTheme] = useState('dark')
   const [play,setPlay] = useState(false)
   const [direction,setDirection] = useState(-1)
-
   const [burgerDirection, setBurgerDirection] = useState(-1)
   const [burgerPlay, setBurgerPlay] = useState(false)
   const [burgerMenuOpen, setBurgerMenu] = useState(false)
@@ -51,7 +50,7 @@ function App() {
       setBurgerPlay(true)
     }else{
       gsap.to('.header-nav',{
-        x:-100,
+        x:-120,
         duration: .3
       })
       setBurgerMenu(true)
@@ -63,7 +62,6 @@ function App() {
   useEffect(()=>{
     document.title= "Nathan Leduc | Dev Web"
   },[])
-
   
   return (
     <div className={`App ${theme}`}>

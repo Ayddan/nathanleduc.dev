@@ -181,7 +181,7 @@ header .burger-button div {
 @media screen and (max-width: 750px) {
   header nav {
     position: absolute;
-    right: -100px;
+    right: -120px;
     top: 100px;
     padding: 20px;
     background-color: var(--body-color);
@@ -521,6 +521,32 @@ header nav a:hover::after {
   .contact-form button {
     max-width: none;
     margin-left: 0;
+  }
+}
+
+.contact-validation-modal {
+  position: fixed;
+  top: 200px;
+  left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  padding: 15px;
+  width: 300px;
+  border-radius: 10px;
+  background-color: var(--input-color);
+  transition: left 0.5s ease;
+}
+.contact-validation-modal.hide {
+  left: -300px;
+}
+.contact-validation-modal p {
+  font-size: 25px;
+}
+@media screen and (max-width: 36rem) {
+  .contact-validation-modal {
+    left: calc((100vw - 300px) / 2);
   }
 }
 
