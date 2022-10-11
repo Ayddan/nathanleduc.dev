@@ -21,7 +21,7 @@ const ContactForm = () => {
             email: email.value,
             message: message.value,
         };
-        let response = await fetch(`https://${window.location.hostname}/api/contact`, {
+        let response = await fetch(`/api/contact`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json;charset=utf-8",

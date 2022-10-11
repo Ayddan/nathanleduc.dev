@@ -50,17 +50,17 @@ const Hero = (props) => {
             <ul className='social-list'>
                 <li>
                     <a target='_blank' href='https://twitter.com/NathanLeduc5'>
-                        <img src={props.theme === 'light' ?  twitterLightSvg : twitterDarkSvg}/>
+                        <img src={props.theme === 'light' ?  twitterLightSvg.src : twitterDarkSvg.src}/>
                     </a>
                 </li>
                 <li>
                     <a target='_blank' href='https://www.linkedin.com/in/nathan-leduc-349561146/'>
-                        <img src={props.theme === 'light' ?  linkedinLightSvg : linkedinDarkSvg}/>
+                        <img src={props.theme === 'light' ?  linkedinLightSvg.src : linkedinDarkSvg.src}/>
                     </a>
                 </li>
                 <li>
                     <a target='_blank' href='https://github.com/Ayddan'>
-                        <img src={props.theme === 'light' ?  githubLightSvg : githubDarkSvg}/>
+                        <img src={props.theme === 'light' ?  githubLightSvg.src : githubDarkSvg.src}/>
                     </a>
                 </li>
                 {/* <li>
@@ -70,7 +70,7 @@ const Hero = (props) => {
                 </li> */}
             </ul>
             </div>
-            <img className='hero-avatar' src={nathanImg} alt='Photo de Nathan'/>
+            <img className='hero-avatar' src={nathanImg.src} alt='Photo de Nathan'/>
       </section>
     )
 }

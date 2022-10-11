@@ -1,27 +1,26 @@
-import { useEffect, useState } from 'react';
-import './styles/css/style.css';
+import React, { useEffect, useState } from 'react';
 import Lottie from 'react-lottie-player';
 import gsap from 'gsap'
 
 // Images
-import schertz from './assets/jpg/schertz.jpg';
-import todoApp from './assets/jpg/todo.jpg';
-import cefimVote from './assets/jpg/cefimvote.jpg';
-import tomleduc from './assets/jpg/tom-leduc.jpg';
-import flinbu from './assets/jpg/flinbu.jpg';
-import scrollGame from './assets/jpg/scroll-game.jpg';
+import schertz from '../src/assets/jpg/schertz.jpg';
+import todoApp from '../src/assets/jpg/todo.jpg';
+import cefimVote from '../src/assets/jpg/cefimvote.jpg';
+import tomleduc from '../src/assets/jpg/tom-leduc.jpg';
+import flinbu from '../src/assets/jpg/flinbu.jpg';
+import scrollGame from '../src/assets/jpg/scroll-game.jpg';
 
 // Components
-import Timeline from './components/Timeline';
-import Hero from './components/Hero';
-import ContactForm from './components/ContactForm';
+import Timeline from '../src/components/Timeline';
+import Hero from '../src/components/Hero';
+import ContactForm from '../src/components/ContactForm';
 
 // Lottie
-import * as toogleThemeData from './assets/lottie/toogle-theme.json';
-import * as burgerButtonData from './assets/lottie/burger-button.json';
-import * as burgerButtonDarkData from './assets/lottie/burger-button-dark.json';
+import * as toogleThemeData from '../src/assets/lottie/toogle-theme.json';
+import * as burgerButtonData from '../src/assets/lottie/burger-button.json';
+import * as burgerButtonDarkData from '../src/assets/lottie/burger-button-dark.json';
 
-function App() {
+export default function Home() {
   const [theme,setTheme] = useState('dark')
   const [play,setPlay] = useState(false)
   const [direction,setDirection] = useState(-1)
@@ -62,7 +61,6 @@ function App() {
   useEffect(()=>{
     document.title= "Nathan Leduc | Dev Web"
   },[])
-  
   return (
     <div className={`App ${theme}`}>
       <header>
@@ -116,37 +114,37 @@ function App() {
         <ul className='project-list'>
           <li className='project-card'>
             <a className='project-illustration' target='_blank' href='https://schertz.fr/'>
-              <img src={schertz}/>
+              <img src={schertz.src}/>
             </a>
             <a className='project-name' target='_blank' href='https://schertz.fr/'>Schertz.fr (Réalisé au sein de Ackwa)</a>
           </li>
           <li className='project-card'>
             <a className='project-illustration' target='_blank' href='http://tomleduc.fr/'>
-              <img src={tomleduc}/>
+              <img src={tomleduc.src}/>
             </a>
             <a className='project-name' target='_blank' href='http://tomleduc.fr/'>tomleduc.fr</a>
           </li>
           <li className='project-card'>
             <a className='project-illustration' href='#'>
-              <img src={cefimVote}/>
+              <img src={cefimVote.src}/>
             </a>
             <a className='project-name' href='#'>CefimVote (Non disponible)</a>
           </li>
           <li className='project-card'>
             <a className='project-illustration' target='_blank' href='https://todo-app-three-sable.vercel.app/'>
-              <img src={todoApp}/>
+              <img src={todoApp.src}/>
             </a>
             <a className='project-name' target='_blank' href='https://todo-app-three-sable.vercel.app/'>Todo app</a>
           </li>
           <li className='project-card'>
             <a className='project-illustration' target='_blank' href='https://flinbu-oognd9w6y-ayddan.vercel.app/'>
-              <img src={flinbu}/>
+              <img src={flinbu.src}/>
             </a>
             <a className='project-name' target='_blank' href='https://flinbu-oognd9w6y-ayddan.vercel.app/'>Flinbu</a>
           </li>
           <li className='project-card'>
             <a className='project-illustration' target='_blank' href='https://scroll-game-ten.vercel.app/'>
-              <img src={scrollGame}/>
+              <img src={scrollGame.src}/>
             </a>
             <a className='project-name' target='_blank' href='https://scroll-game-ten.vercel.app/'>Scroll game</a>
           </li>
@@ -160,7 +158,5 @@ function App() {
         <ContactForm/>
       </section>
     </div>
-  );
+  )
 }
-
-export default App;
