@@ -113,16 +113,16 @@ export default function Home() {
         </div>
         <ul className='project-list'>
           <li className='project-card'>
-            <a className='project-illustration' target='_blank' href='https://schertz.fr/'>
+            <a className='project-illustration' target='_blank' rel="noreferrer" href='https://schertz.fr/'>
               <img src={schertz.src}/>
             </a>
-            <a className='project-name' target='_blank' href='https://schertz.fr/'>Schertz.fr (Réalisé au sein de Ackwa)</a>
+            <a className='project-name' target='_blank' rel="noreferrer" href='https://schertz.fr/'>Schertz.fr (Réalisé au sein de Ackwa)</a>
           </li>
           <li className='project-card'>
-            <a className='project-illustration' target='_blank' href='http://tomleduc.fr/'>
+            <a className='project-illustration' target='_blank' rel="noreferrer" href='http://tomleduc.fr/'>
               <img src={tomleduc.src}/>
             </a>
-            <a className='project-name' target='_blank' href='http://tomleduc.fr/'>tomleduc.fr</a>
+            <a className='project-name' target='_blank' rel="noreferrer" href='http://tomleduc.fr/'>tomleduc.fr</a>
           </li>
           <li className='project-card'>
             <a className='project-illustration' href='#'>
@@ -131,22 +131,22 @@ export default function Home() {
             <a className='project-name' href='#'>CefimVote (Non disponible)</a>
           </li>
           <li className='project-card'>
-            <a className='project-illustration' target='_blank' href='https://todo-app-three-sable.vercel.app/'>
+            <a className='project-illustration' target='_blank' rel="noreferrer" href='https://todo-app-three-sable.vercel.app/'>
               <img src={todoApp.src}/>
             </a>
-            <a className='project-name' target='_blank' href='https://todo-app-three-sable.vercel.app/'>Todo app</a>
+            <a className='project-name' target='_blank' rel="noreferrer" href='https://todo-app-three-sable.vercel.app/'>Todo app</a>
           </li>
           <li className='project-card'>
-            <a className='project-illustration' target='_blank' href='https://flinbu-oognd9w6y-ayddan.vercel.app/'>
+            <a className='project-illustration' target='_blank' rel="noreferrer" href='https://flinbu-oognd9w6y-ayddan.vercel.app/'>
               <img src={flinbu.src}/>
             </a>
-            <a className='project-name' target='_blank' href='https://flinbu-oognd9w6y-ayddan.vercel.app/'>Flinbu</a>
+            <a className='project-name' target='_blank' rel="noreferrer" href='https://flinbu-oognd9w6y-ayddan.vercel.app/'>Flinbu</a>
           </li>
           <li className='project-card'>
-            <a className='project-illustration' target='_blank' href='https://scroll-game-ten.vercel.app/'>
+            <a className='project-illustration' target='_blank' rel="noreferrer" href='https://scroll-game-ten.vercel.app/'>
               <img src={scrollGame.src}/>
             </a>
-            <a className='project-name' target='_blank' href='https://scroll-game-ten.vercel.app/'>Scroll game</a>
+            <a className='project-name' target='_blank' rel="noreferrer" href='https://scroll-game-ten.vercel.app/'>Scroll game</a>
           </li>
         </ul>
       </section>

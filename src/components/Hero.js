@@ -49,17 +49,17 @@ const Hero = (props) => {
             </div>
             <ul className='social-list'>
                 <li>
-                    <a target='_blank' href='https://twitter.com/NathanLeduc5'>
+                    <a target='_blank' rel="noreferrer" href='https://twitter.com/NathanLeduc5'>
                         <img src={props.theme === 'light' ?  twitterLightSvg.src : twitterDarkSvg.src}/>
                     </a>
                 </li>
                 <li>
-                    <a target='_blank' href='https://www.linkedin.com/in/nathan-leduc-349561146/'>
+                    <a target='_blank' rel="noreferrer" href='https://www.linkedin.com/in/nathan-leduc-349561146/'>
                         <img src={props.theme === 'light' ?  linkedinLightSvg.src : linkedinDarkSvg.src}/>
                     </a>
                 </li>
                 <li>
-                    <a target='_blank' href='https://github.com/Ayddan'>
+                    <a target='_blank' rel="noreferrer" href='https://github.com/Ayddan'>
                         <img src={props.theme === 'light' ?  githubLightSvg.src : githubDarkSvg.src}/>
                     </a>
                 </li>
