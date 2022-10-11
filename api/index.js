@@ -25,7 +25,7 @@ app.get('/api/item/:slug', (req, res) => {
 // Mail contact handler
 const nodemailer = require("nodemailer");
 
-router.post("/contact", (req, res) => {
+app.post("/contact", (req, res) => {
     const contactEmail = nodemailer.createTransport({
         service: 'gmail',
         auth: {
