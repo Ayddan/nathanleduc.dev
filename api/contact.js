@@ -1,12 +1,9 @@
 require('dotenv').config();
 const express = require('express');
-const app = express();
-const cors = require("cors");
+const router = express.Router();
 const nodemailer = require("nodemailer");
 
-app.use(cors());
-app.use(express.json());
-app.post('/api/contact', (req,res)=>{
+router.get("/", (req, res) => {
     const contactEmail = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -27,25 +24,24 @@ app.post('/api/contact', (req,res)=>{
     const email = req.body.email.toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) ? req.body.email : null;
     const message = req.body.message; 
     const mail = {
-        from: name,
-        to: process.env.REACT_APP_SMTP_MAIL,
-        subject: "Contact Depuis Portfolio",
-        html: `<p>Name: ${name}</p>
-                <p>Email: ${email}</p>
-                <p>Message: ${message}</p>`,
+      from: name,
+      to: process.env.REACT_APP_SMTP_MAIL,
+      subject: "Contact Depuis Portfolio",
+      html: `<p>Name: ${name}</p>
+             <p>Email: ${email}</p>
+             <p>Message: ${message}</p>`,
     };
     if(email != null){
-        contactEmail.sendMail(mail, (error) => {
-            if (error) {
-            res.json({ status: "Un problème est survenu : " + error });
-            } else {
-            res.json({ status: "Message envoyé !" });
-            }
-        });
+      contactEmail.sendMail(mail, (error) => {
+        if (error) {
+          res.json({ status: "Un problème est survenu : " + error });
+        } else {
+          res.json({ status: "Message envoyé !" });
+        }
+      });
     }else{
-        res.status(500).json({ status: "L'email doit être valide" }); 
+      res.status(500).json({ status: "L'email doit être valide" }); 
     }
 });
 
-app.listen(5000, () => console.log("Server Running on port 5000 !"));
-module.exports = app;
+module.exports = router;
