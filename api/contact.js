@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const nodemailer = require("nodemailer");
 
-router.get("/", (req, res) => {
+router.post("/", (req, res) => {
     const contactEmail = nodemailer.createTransport({
         service: 'gmail',
         auth: {
