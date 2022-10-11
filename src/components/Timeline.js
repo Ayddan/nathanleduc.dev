@@ -136,7 +136,7 @@ const Timeline = () => {
                     <li ref={freelance} id='freelance'>
                         <h2 className="timeline-title">Développeur web Freelance</h2>
                         <span className="timeline-subtitle">Tours - Remote</span>
-                        <span className="timeline-date">Juillet 2022 - Aujourd'hui</span>
+                        <span className="timeline-date">Juillet 2022 - Aujourd&apos;hui</span>
                         <p className="timeline-paragraphe">Ecrivons la suite ensemble</p>
                     </li>
                 </ul>
