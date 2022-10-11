@@ -28,7 +28,7 @@ contactEmail.verify((error) => {
 
 router.post("/contact", (req, res) => {
     const name = req.body.name;
-    const email = req.body.email;
+    const email = req.body.email.toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) ? req.body.email : null;
     const message = req.body.message; 
     const mail = {
       from: name,
@@ -38,11 +38,16 @@ router.post("/contact", (req, res) => {
              <p>Email: ${email}</p>
              <p>Message: ${message}</p>`,
     };
-    contactEmail.sendMail(mail, (error) => {
-      if (error) {
-        res.json({ status: "Un problème est survenu" });
-      } else {
-        res.json({ status: "Message envoyé" });
-      }
-    });
+    if(email != null){
+      contactEmail.sendMail(mail, (error) => {
+        if (error) {
+          res.json({ status: "Un problème est survenu : " + error });
+        } else {
+          res.json({ status: "Message envoyé !" });
+        }
+      });
+    }else{
+      res.status(500).json({ status: "L'email doit être valide" }); 
+    }
+    
 });

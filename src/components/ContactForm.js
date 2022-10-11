@@ -9,6 +9,8 @@ const ContactForm = () => {
     const [status, setStatus] = useState("Envoyer");
     const [validationPlay, setValidationPlay] = useState(false);
     const [modalClass, setModalClass] = useState('hide');
+    const [modalMessage, setModalMessage] = useState('');
+    const [validResponse, setValidResponse] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -28,11 +30,14 @@ const ContactForm = () => {
         });
         setStatus("Envoyer");
         let result = await response.json();
+        if(response.status === 200) setValidResponse(true);
+        else setValidResponse(false);
         playContactValidation(result);
     };
 
-    const playContactValidation = () => {
+    const playContactValidation = (result) => {
         setModalClass('');
+        setModalMessage(result.status);
         setTimeout(()=>setValidationPlay(true),300);
     }
 
@@ -56,17 +61,20 @@ const ContactForm = () => {
                 <button className="button-1" type="submit">{status}</button>
             </form>
             <div className={`contact-validation-modal ${modalClass}`}>
-                <Lottie
-                    ref={validationAnimation}
-                    loop={false}
-                    play={validationPlay}
-                    speed={1}
-                    animationData={validationAnimationData}
-                    style={{
-                        width: 150
-                    }}
-                />
-                <p>Message envoyé !</p>
+                {validResponse ? (
+                    <Lottie
+                        ref={validationAnimation}
+                        loop={false}
+                        play={validationPlay}
+                        speed={1}
+                        animationData={validationAnimationData}
+                        style={{
+                            width: 150
+                        }}
+                    />
+                )
+                :null}
+                <p>{modalMessage ? modalMessage : ''}</p>
                 <button className="button-1" onClick={()=>setModalClass('hide')}>Fermer</button>
             </div>
         </> 
