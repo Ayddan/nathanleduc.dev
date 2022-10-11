@@ -61,6 +61,7 @@ export default function Home() {
   useEffect(()=>{
     document.title= "Nathan Leduc | Dev Web"
   },[])
+  
   return (
     <div className={`App ${theme}`}>
       <header>

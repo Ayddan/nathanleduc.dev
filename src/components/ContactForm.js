@@ -33,6 +33,9 @@ const ContactForm = () => {
         if(response.status === 200) setValidResponse(true);
         else setValidResponse(false);
         playContactValidation(result);
+        name.value = '';
+        email.value = '';
+        message.value = '';
     };
 
     const playContactValidation = (result) => {
