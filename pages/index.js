@@ -11,6 +11,7 @@ import flinbu from '../src/assets/jpg/flinbu.jpg';
 import scrollGame from '../src/assets/jpg/scroll-game.jpg';
 import laDemeureDeZoe from '../src/assets/jpg/lademeuredezoe.jpg';
 import clickpick  from '../src/assets/jpg/clickpick.jpg';
+import cardGame  from '../src/assets/jpg/cardgame.jpg';
 
 // Components
 import Timeline from '../src/components/Timeline';
@@ -138,6 +139,12 @@ export default function Home() {
               <img src={clickpick.src}/>
             </a>
             <a className='project-name' target='_blank' href='https://pickme-nine.vercel.app/'>ClickPick (Work in progress)</a>
+          </li>
+          <li className='project-card'>
+            <a className='project-illustration' target='_blank' href='https://card-game-henna.vercel.app/'>
+              <img src={cardGame.src}/>
+            </a>
+            <a className='project-name' target='_blank' href='https://card-game-henna.vercel.app/'>Card game (Work in progress)</a>
           </li>
           <li className='project-card'>
             <a className='project-illustration' href='#'>
