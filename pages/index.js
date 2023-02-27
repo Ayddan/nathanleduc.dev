@@ -9,6 +9,8 @@ import cefimVote from '../src/assets/jpg/cefimvote.jpg';
 import tomleduc from '../src/assets/jpg/tom-leduc.jpg';
 import flinbu from '../src/assets/jpg/flinbu.jpg';
 import scrollGame from '../src/assets/jpg/scroll-game.jpg';
+import laDemeureDeZoe from '../src/assets/jpg/lademeuredezoe.jpg';
+import clickpick  from '../src/assets/jpg/clickpick.jpg';
 
 // Components
 import Timeline from '../src/components/Timeline';
@@ -126,10 +128,22 @@ export default function Home() {
             <a className='project-name' target='_blank' rel="noreferrer" href='http://tomleduc.fr/'>tomleduc.fr</a>
           </li>
           <li className='project-card'>
+            <a className='project-illustration' target='_blank' href='https://lademeuredezoe.com/'>
+              <img src={laDemeureDeZoe.src}/>
+            </a>
+            <a className='project-name' target='_blank' href='https://lademeuredezoe.com/'>lademeuredezoe.com</a>
+          </li>
+          <li className='project-card'>
+            <a className='project-illustration' target='_blank' href='https://pickme-nine.vercel.app/'>
+              <img src={clickpick.src}/>
+            </a>
+            <a className='project-name' target='_blank' href='https://pickme-nine.vercel.app/'>ClickPick (Work in progress)</a>
+          </li>
+          <li className='project-card'>
             <a className='project-illustration' href='#'>
               <img src={cefimVote.src}/>
             </a>
-            <a className='project-name' href='#'>CefimVote (Non disponible)</a>
+            <a className='project-name' href='#'>CefimVote (indisponible)</a>
           </li>
           <li className='project-card'>
             <a className='project-illustration' target='_blank' rel="noreferrer" href='https://todo-app-three-sable.vercel.app/'>
