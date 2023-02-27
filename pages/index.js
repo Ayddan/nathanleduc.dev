@@ -129,22 +129,22 @@ export default function Home() {
             <a className='project-name' target='_blank' rel="noreferrer" href='http://tomleduc.fr/'>tomleduc.fr</a>
           </li>
           <li className='project-card'>
-            <a className='project-illustration' target='_blank' href='https://lademeuredezoe.com/'>
+            <a className='project-illustration' target='_blank' rel="noreferrer" href='https://lademeuredezoe.com/'>
               <img src={laDemeureDeZoe.src} alt="La Demeure de Zoe"/>
             </a>
-            <a className='project-name' target='_blank' href='https://lademeuredezoe.com/'>lademeuredezoe.com</a>
+            <a className='project-name' target='_blank' rel="noreferrer" href='https://lademeuredezoe.com/'>lademeuredezoe.com</a>
           </li>
           <li className='project-card'>
-            <a className='project-illustration' target='_blank' href='https://pickme-nine.vercel.app/'>
+            <a className='project-illustration' target='_blank' rel="noreferrer" href='https://pickme-nine.vercel.app/'>
               <img src={clickpick.src} alt="ClickPick"/>
             </a>
-            <a className='project-name' target='_blank' href='https://pickme-nine.vercel.app/'>ClickPick (Work in progress)</a>
+            <a className='project-name' target='_blank' rel="noreferrer" href='https://pickme-nine.vercel.app/'>ClickPick (Work in progress)</a>
           </li>
           <li className='project-card'>
-            <a className='project-illustration' target='_blank' href='https://card-game-henna.vercel.app/'>
+            <a className='project-illustration' target='_blank' rel="noreferrer" href='https://card-game-henna.vercel.app/'>
               <img src={cardGame.src} alt="Card Game"/>
             </a>
-            <a className='project-name' target='_blank' href='https://card-game-henna.vercel.app/'>Card game (Work in progress)</a>
+            <a className='project-name' target='_blank' rel="noreferrer" href='https://card-game-henna.vercel.app/'>Card game (Work in progress)</a>
           </li>
           <li className='project-card'>
             <a className='project-illustration' href='#'>
