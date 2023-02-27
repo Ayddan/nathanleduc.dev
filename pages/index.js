@@ -118,55 +118,55 @@ export default function Home() {
         <ul className='project-list'>
           <li className='project-card'>
             <a className='project-illustration' target='_blank' rel="noreferrer" href='https://schertz.fr/'>
-              <img src={schertz.src}/>
+              <img src={schertz.src} alt="Schertz"/>
             </a>
             <a className='project-name' target='_blank' rel="noreferrer" href='https://schertz.fr/'>Schertz.fr (Réalisé au sein de Ackwa)</a>
           </li>
           <li className='project-card'>
             <a className='project-illustration' target='_blank' rel="noreferrer" href='http://tomleduc.fr/'>
-              <img src={tomleduc.src}/>
+              <img src={tomleduc.src} alt="tomleduc.fr" />
             </a>
             <a className='project-name' target='_blank' rel="noreferrer" href='http://tomleduc.fr/'>tomleduc.fr</a>
           </li>
           <li className='project-card'>
             <a className='project-illustration' target='_blank' href='https://lademeuredezoe.com/'>
-              <img src={laDemeureDeZoe.src}/>
+              <img src={laDemeureDeZoe.src} alt="La Demeure de Zoe"/>
             </a>
             <a className='project-name' target='_blank' href='https://lademeuredezoe.com/'>lademeuredezoe.com</a>
           </li>
           <li className='project-card'>
             <a className='project-illustration' target='_blank' href='https://pickme-nine.vercel.app/'>
-              <img src={clickpick.src}/>
+              <img src={clickpick.src} alt="ClickPick"/>
             </a>
             <a className='project-name' target='_blank' href='https://pickme-nine.vercel.app/'>ClickPick (Work in progress)</a>
           </li>
           <li className='project-card'>
             <a className='project-illustration' target='_blank' href='https://card-game-henna.vercel.app/'>
-              <img src={cardGame.src}/>
+              <img src={cardGame.src} alt="Card Game"/>
             </a>
             <a className='project-name' target='_blank' href='https://card-game-henna.vercel.app/'>Card game (Work in progress)</a>
           </li>
           <li className='project-card'>
             <a className='project-illustration' href='#'>
-              <img src={cefimVote.src}/>
+              <img src={cefimVote.src} alt="Cefim Vote"/>
             </a>
             <a className='project-name' href='#'>CefimVote (indisponible)</a>
           </li>
           <li className='project-card'>
             <a className='project-illustration' target='_blank' rel="noreferrer" href='https://todo-app-three-sable.vercel.app/'>
-              <img src={todoApp.src}/>
+              <img src={todoApp.src} alt="Todo App"/>
             </a>
             <a className='project-name' target='_blank' rel="noreferrer" href='https://todo-app-three-sable.vercel.app/'>Todo app</a>
           </li>
           <li className='project-card'>
             <a className='project-illustration' target='_blank' rel="noreferrer" href='https://flinbu-oognd9w6y-ayddan.vercel.app/'>
-              <img src={flinbu.src}/>
+              <img src={flinbu.src} alt="Flinbu"/>
             </a>
             <a className='project-name' target='_blank' rel="noreferrer" href='https://flinbu-oognd9w6y-ayddan.vercel.app/'>Flinbu</a>
           </li>
           <li className='project-card'>
             <a className='project-illustration' target='_blank' rel="noreferrer" href='https://scroll-game-ten.vercel.app/'>
-              <img src={scrollGame.src}/>
+              <img src={scrollGame.src} alt="Scroll Game"/>
             </a>
             <a className='project-name' target='_blank' rel="noreferrer" href='https://scroll-game-ten.vercel.app/'>Scroll game</a>
           </li>
