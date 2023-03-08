@@ -550,6 +550,14 @@ header nav a:hover::after {
   }
 }
 
+/* greycliffcf-regular */
+@font-face {
+  font-display: swap;
+  font-family: "Greycliff";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Fontspring-DEMO-greycliffcf-regular.otf") format("otf");
+}
 .dark {
   --body-color: #202023;
   --text-color: #DDDDDD;
@@ -570,7 +578,7 @@ body * {
   background-color: var(--body-color);
   color: var(--text-color);
   min-height: 100vh;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Greycliff", sans-serif;
   overflow-x: hidden;
 }
 
