@@ -63,6 +63,20 @@ export default function Home() {
 
   useEffect(()=>{
     document.title= "Nathan Leduc | Dev Web"
+    // Retrieve projects data
+    fetch(`https://api.notion.com/v1/databases/${process.env.REACT_APP_NOTION_DATABASE_ID}/query`,
+    {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.REACT_APP_NOTION_TOKEN}`,
+        'Content-Type': 'application/json',
+        'Notion-Version': '2022-02-22'
+      },
+      body: {},
+      redirect: 'follow'
+    })
+    .then(resp=>resp)
+    .then(data=>console.log(data))
   },[])
   
   return (
