@@ -30,6 +30,7 @@ export default function Home() {
   const [burgerDirection, setBurgerDirection] = useState(-1)
   const [burgerPlay, setBurgerPlay] = useState(false)
   const [burgerMenuOpen, setBurgerMenu] = useState(false)
+  const [projects, setProjects] = useState([])
 
   const toogleTheme = () => {
     if(theme === 'light') setTheme('dark')
@@ -64,20 +65,17 @@ export default function Home() {
   useEffect(()=>{
     document.title= "Nathan Leduc | Dev Web"
     // Retrieve projects data
-    fetch(`https://api.notion.com/v1/databases/${process.env.REACT_APP_NOTION_DATABASE_ID}/query`,
-    {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${process.env.REACT_APP_NOTION_TOKEN}`,
-        'Content-Type': 'application/json',
-        'Notion-Version': '2022-02-22'
-      },
-      body: {},
-      redirect: 'follow'
+    fetch(`/api/project-infos`)
+    .then(resp=>resp.json())
+    .then(data=>{
+      console.log(data)
+      setProjects(data.results)
     })
-    .then(resp=>resp)
-    .then(data=>console.log(data))
   },[])
+
+  useEffect(()=>{
+    if(projects)  console.log(projects)
+  },[projects])
   
   return (
     <div className={`App ${theme}`}>
@@ -130,6 +128,16 @@ export default function Home() {
             <hr className="separator"/>
         </div>
         <ul className='project-list'>
+          { projects.length > 0 ?
+            projects.map((e,i)=>(
+              <li className='project-card' key={i}>
+                <a className='project-illustration' target='_blank' rel="noreferrer" href={e.properties.url.url}>
+                  <img src={e.cover && e.cover.file ? e.cover.file.url : ''} alt="Schertz"/>
+                </a>
+                <a className='project-name' target='_blank' rel="noreferrer" href={e.properties.url.url}>{e.properties.Nom.title[0].plain_text}</a>
+              </li>
+            )) : null
+          }
           <li className='project-card'>
             <a className='project-illustration' target='_blank' rel="noreferrer" href='https://schertz.fr/'>
               <img src={schertz.src} alt="Schertz"/>
