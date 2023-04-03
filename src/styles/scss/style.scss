@@ -34,9 +34,15 @@ body *{
     transition: .1s color, .3s background-color;
 }
 
-// body{
-//     overflow-x: hidden;
-// }
+::-moz-selection { /* Code for Firefox */
+    color: var(--text-color);
+    background: #FC8166;
+}
+
+::selection {
+    color: var(--text-color);
+    background: #FC8166;
+}
 
 .App{
     background-color: var(--body-color);
