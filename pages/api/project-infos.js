@@ -1,6 +1,20 @@
 export default async function handler(req, res) {
     // Retrieve projects data
-    console.log('api request' + process.env.REACT_APP_NOTION_DATABASE_ID)
+    const body = {
+      filter: {
+        property: 'Status',
+        status:{
+          equals: 'public'
+        }
+      },
+      sorts: [
+        {
+            property: "Menu index",
+            direction: "ascending"
+        }
+      ]
+    }
+
     await fetch(`https://api.notion.com/v1/databases/${process.env.REACT_APP_NOTION_DATABASE_ID}/query`,
     {
       method: 'POST',
@@ -9,6 +23,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
         'Notion-Version': '2022-02-22'
       },
+      body: JSON.stringify(body),
       redirect: 'follow'
     })
     .then(resp=>resp.json())

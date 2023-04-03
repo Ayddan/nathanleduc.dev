@@ -68,14 +68,9 @@ export default function Home() {
     fetch(`/api/project-infos`)
     .then(resp=>resp.json())
     .then(data=>{
-      console.log(data)
       setProjects(data.results)
     })
   },[])
-
-  useEffect(()=>{
-    if(projects)  console.log(projects)
-  },[projects])
   
   return (
     <div className={`App ${theme}`}>
@@ -131,67 +126,13 @@ export default function Home() {
           { projects.length > 0 ?
             projects.map((e,i)=>(
               <li className='project-card' key={i}>
-                <a className='project-illustration' target='_blank' rel="noreferrer" href={e.properties.url.url}>
+                <a className='project-illustration'  target={e.properties.url.url !== '#' ? '_blank' : ''} rel="noreferrer" href={e.properties.url.url}>
                   <img src={e.cover && e.cover.file ? e.cover.file.url : ''} alt="Schertz"/>
                 </a>
                 <a className='project-name' target='_blank' rel="noreferrer" href={e.properties.url.url}>{e.properties.Nom.title[0].plain_text}</a>
               </li>
             )) : null
           }
-          <li className='project-card'>
-            <a className='project-illustration' target='_blank' rel="noreferrer" href='https://schertz.fr/'>
-              <img src={schertz.src} alt="Schertz"/>
-            </a>
-            <a className='project-name' target='_blank' rel="noreferrer" href='https://schertz.fr/'>Schertz.fr (Réalisé au sein de Ackwa)</a>
-          </li>
-          <li className='project-card'>
-            <a className='project-illustration' target='_blank' rel="noreferrer" href='http://tomleduc.fr/'>
-              <img src={tomleduc.src} alt="tomleduc.fr" />
-            </a>
-            <a className='project-name' target='_blank' rel="noreferrer" href='http://tomleduc.fr/'>tomleduc.fr</a>
-          </li>
-          <li className='project-card'>
-            <a className='project-illustration' target='_blank' rel="noreferrer" href='https://lademeuredezoe.com/'>
-              <img src={laDemeureDeZoe.src} alt="La Demeure de Zoe"/>
-            </a>
-            <a className='project-name' target='_blank' rel="noreferrer" href='https://lademeuredezoe.com/'>lademeuredezoe.com</a>
-          </li>
-          <li className='project-card'>
-            <a className='project-illustration' target='_blank' rel="noreferrer" href='https://pickme-nine.vercel.app/'>
-              <img src={clickpick.src} alt="ClickPick"/>
-            </a>
-            <a className='project-name' target='_blank' rel="noreferrer" href='https://pickme-nine.vercel.app/'>ClickPick (Work in progress)</a>
-          </li>
-          <li className='project-card'>
-            <a className='project-illustration' target='_blank' rel="noreferrer" href='https://card-game-henna.vercel.app/'>
-              <img src={cardGame.src} alt="Card Game"/>
-            </a>
-            <a className='project-name' target='_blank' rel="noreferrer" href='https://card-game-henna.vercel.app/'>Card game (Work in progress)</a>
-          </li>
-          <li className='project-card'>
-            <a className='project-illustration' href='#'>
-              <img src={cefimVote.src} alt="Cefim Vote"/>
-            </a>
-            <a className='project-name' href='#'>CefimVote (indisponible)</a>
-          </li>
-          <li className='project-card'>
-            <a className='project-illustration' target='_blank' rel="noreferrer" href='https://todo-app-three-sable.vercel.app/'>
-              <img src={todoApp.src} alt="Todo App"/>
-            </a>
-            <a className='project-name' target='_blank' rel="noreferrer" href='https://todo-app-three-sable.vercel.app/'>Todo app</a>
-          </li>
-          <li className='project-card'>
-            <a className='project-illustration' target='_blank' rel="noreferrer" href='https://flinbu-oognd9w6y-ayddan.vercel.app/'>
-              <img src={flinbu.src} alt="Flinbu"/>
-            </a>
-            <a className='project-name' target='_blank' rel="noreferrer" href='https://flinbu-oognd9w6y-ayddan.vercel.app/'>Flinbu</a>
-          </li>
-          <li className='project-card'>
-            <a className='project-illustration' target='_blank' rel="noreferrer" href='https://scroll-game-ten.vercel.app/'>
-              <img src={scrollGame.src} alt="Scroll Game"/>
-            </a>
-            <a className='project-name' target='_blank' rel="noreferrer" href='https://scroll-game-ten.vercel.app/'>Scroll game</a>
-          </li>
         </ul>
       </section>
       <section className='container' id='contact'>
