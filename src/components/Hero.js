@@ -40,7 +40,7 @@ const Hero = (props) => {
                 </div>
                 <hr id="hero-separator"/>
                 <div className="text-box">
-                    <span className='sub-title'>Developpeur web Fullstack</span>
+                    <span className='sub-title'>Développeur web Fullstack</span>
                 </div>
             </div>
             <div className='hero-buttons flex-center'>
