@@ -428,6 +428,7 @@ header nav a:hover::after {
   border-radius: 10px;
   overflow: hidden;
   aspect-ratio: 16/9;
+  box-shadow: 0 0 16px 6px #1c1c1e;
 }
 .project-card .project-illustration img {
   width: 100%;
