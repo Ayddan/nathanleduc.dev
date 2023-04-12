@@ -417,22 +417,58 @@ header nav a:hover::after {
 }
 
 .project-card {
-  transform: translateY(0px);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 .project-card:hover {
-  transform: translateY(10px);
+  cursor: pointer;
+}
+.project-card.abs {
+  transform: inherit;
+}
+.project-card.abs:hover {
+  transform: inherit;
+  cursor: inherit;
+}
+.project-card .card-content {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--body-color);
+  border-radius: 10px;
+  height: 240px;
+  overflow-y: hidden;
+}
+.project-card .card-content.abs {
+  position: fixed;
+  z-index: 6;
+}
+.project-card .card-content.abs img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+.project-card .card-content.abs .project-infos-wrapper {
+  height: 100%;
+  padding: 50px;
+}
+.project-card .card-content .project-infos-wrapper {
+  position: absolute;
+  height: 0;
+  padding: 0;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.project-card .card-content .project-infos-wrapper::-webkit-scrollbar {
+  display: none;
 }
 .project-card .project-illustration {
   display: block;
   border-radius: 10px;
   overflow: hidden;
   aspect-ratio: 16/9;
-}
-.project-card .project-illustration img {
-  width: 100%;
-  height: 100%;
+  box-shadow: 0 0 16px 6px #1c1c1e;
   object-fit: cover;
+  transition: height 1s ease, border-radius 1s ease;
 }
 .project-card .project-name {
   display: block;
@@ -497,6 +533,7 @@ header nav a:hover::after {
   width: 100%;
   background-color: var(--input-color);
   border: none;
+  border-radius: 5px;
   color: var(--text-color);
   padding: 10px;
   box-shadow: 0 -1px 0 #FC8166 inset;
@@ -574,7 +611,12 @@ body * {
   transition: 0.1s color, 0.3s background-color;
 }
 
-::-moz-selection { /* Code for Firefox */
+body.locked {
+  overflow: hidden;
+  margin-right: 25px;
+}
+
+::-moz-selection { /* Firefox */
   color: var(--text-color);
   background: #FC8166;
 }
@@ -590,6 +632,27 @@ body * {
   min-height: 100vh;
   font-family: "Greycliff", sans-serif;
   overflow-x: hidden;
+}
+
+.background-blur {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(0px);
+  pointer-events: none;
+  transition: backdrop-filter 1s ease;
+}
+.background-blur.active {
+  backdrop-filter: blur(20px);
+}
+.background-blur.clickable {
+  pointer-events: all;
+}
+.background-blur:hover {
+  cursor: pointer;
 }
 
 .container {

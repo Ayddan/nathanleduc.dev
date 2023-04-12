@@ -34,7 +34,12 @@ body *{
     transition: .1s color, .3s background-color;
 }
 
-::-moz-selection { /* Code for Firefox */
+body.locked{
+    overflow: hidden;
+    margin-right: 25px;
+}
+
+::-moz-selection { /* Firefox */
     color: var(--text-color);
     background: #FC8166;
 }
@@ -50,6 +55,27 @@ body *{
     min-height: 100vh;
     font-family: 'Greycliff', sans-serif;
     overflow-x: hidden;
+}
+
+.background-blur{
+    position: fixed;
+    top: 0px;
+    left: 0;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(0px);
+    pointer-events: none;
+    transition: backdrop-filter 1s ease;
+    &.active{
+        backdrop-filter: blur(20px);
+    }
+    &.clickable{
+        pointer-events: all;
+    }
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 .container{
