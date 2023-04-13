@@ -22,6 +22,7 @@ import ContactForm from '../src/components/ContactForm';
 import * as toogleThemeData from '../src/assets/lottie/toogle-theme.json';
 import * as burgerButtonData from '../src/assets/lottie/burger-button.json';
 import * as burgerButtonDarkData from '../src/assets/lottie/burger-button-dark.json';
+import TechStack from '../src/components/TechStack';
 
 export default function Home() {
   const [theme,setTheme] = useState('dark')
@@ -116,6 +117,7 @@ export default function Home() {
         </div>
       </header>
       <Hero theme={theme}/>
+      <TechStack theme={theme}/>
       <Timeline/>
       <section className='container' id='projects'>
         <div className='title-wrapper'>

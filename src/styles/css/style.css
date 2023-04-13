@@ -423,12 +423,15 @@ header nav a:hover::after {
 .project-card:hover {
   transform: translateY(10px);
 }
+.project-card:hover .project-name {
+  opacity: 1;
+}
 .project-card .project-illustration {
   display: block;
   border-radius: 10px;
   overflow: hidden;
   aspect-ratio: 16/9;
-  box-shadow: 0 0 16px 6px #1c1c1e;
+  box-shadow: 0 0 16px 0px rgba(28, 28, 30, 0.8);
 }
 .project-card .project-illustration img {
   width: 100%;
@@ -441,6 +444,8 @@ header nav a:hover::after {
   text-decoration: none;
   text-align: center;
   font-size: 25px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .project-list {
@@ -548,6 +553,48 @@ header nav a:hover::after {
 @media screen and (max-width: 36rem) {
   .contact-validation-modal {
     left: calc((100vw - 300px) / 2);
+  }
+}
+
+ul.tech-list {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 40px;
+}
+ul.tech-list .tech-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+ul.tech-list .tech-element:hover {
+  transform: scale(1.1);
+}
+ul.tech-list .tech-element:hover h2 {
+  opacity: 1;
+}
+ul.tech-list .tech-element img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+ul.tech-list .tech-element h2 {
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+@media screen and (max-width: 750px) {
+  ul.tech-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 450px) {
+  ul.tech-list .tech-element img {
+    width: 70px;
+  }
+  ul.tech-list .tech-element h2 {
+    font-size: 18px;
   }
 }
 
