@@ -218,7 +218,7 @@ header nav a::after {
   width: 0;
   height: 2px;
   background-color: var(--text-color);
-  transition: 0.3s width ease-in-out;
+  transition: 0.8s width cubic-bezier(0.07, 0.82, 0.16, 1);
 }
 header nav a:hover::after {
   left: inherit;
@@ -418,7 +418,7 @@ header nav a:hover::after {
 
 .project-card {
   transform: translateY(0px);
-  transition: transform 0.3s;
+  transition: transform 0.8s cubic-bezier(0.07, 0.82, 0.16, 1);
 }
 .project-card:hover {
   transform: translateY(10px);
@@ -445,7 +445,7 @@ header nav a:hover::after {
   text-align: center;
   font-size: 25px;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.8s cubic-bezier(0.07, 0.82, 0.16, 1);
 }
 
 .project-list {
@@ -567,7 +567,7 @@ ul.tech-list .tech-element {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transition: transform 0.3s ease;
+  transition: transform 0.8s cubic-bezier(0.07, 0.82, 0.16, 1);
 }
 ul.tech-list .tech-element:hover {
   transform: scale(1.1);
@@ -582,7 +582,7 @@ ul.tech-list .tech-element img {
 ul.tech-list .tech-element h2 {
   text-align: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.8s cubic-bezier(0.07, 0.82, 0.16, 1);
 }
 @media screen and (max-width: 750px) {
   ul.tech-list {

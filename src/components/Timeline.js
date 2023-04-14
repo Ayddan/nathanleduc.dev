@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import gsap from 'gsap';
+import gsap, {CustomEase} from 'gsap';
 import { useInView } from 'react-intersection-observer'
 
 const Timeline = () => {
     const animationDuration = .5
+    const animationEase = "expo.out"
 
     const [begin,beginInView] = useInView({
         triggerOnce: true,
@@ -27,56 +28,67 @@ const Timeline = () => {
             const beginTimeline = gsap.timeline({ paused: false })
             beginTimeline.to('#circle-1', {
                 strokeDashoffset: 0,
-                duration: animationDuration
+                duration: animationDuration,
+                ease:animationEase
             })
             .to('#logo-1', {
                 opacity: 1,
-                duration: animationDuration
+                duration: animationDuration,
+                ease:animationEase
             })
         }
         if(studyInView){
             const studyTimeline = gsap.timeline({ paused: false })
             studyTimeline.to('#path-1', {
                 strokeDashoffset: 0,
-                duration: animationDuration
+                duration: animationDuration,
+                ease:animationEase
             })
             .to('#circle-2', {
                 strokeDashoffset: 0,
-                duration: animationDuration
+                duration: animationDuration,
+                ease:animationEase
             })
             .to('#logo-2', {
                 opacity: 1,
-                duration: animationDuration
+                duration: animationDuration,
+                ease:animationEase
             })
         }
         if(firstWorkInView){
             const firstWorkTimeline = gsap.timeline({ paused: false })
             firstWorkTimeline.to('#path-2', {
                 strokeDashoffset: 0,
-                duration: animationDuration
+                duration: animationDuration,
+                ease:animationEase
             })
             .to('#circle-3', {
                 strokeDashoffset: 0,
-                duration: animationDuration
+                duration: animationDuration,
+                ease:animationEase
             })
             .to('#logo-3', {
                 opacity: 1,
-                duration: animationDuration
+                duration: animationDuration,
+                ease:animationEase
             })
         }
         if(freelanceInView){
             const freelanceTimeline = gsap.timeline({ paused: false })
             freelanceTimeline.to('#path-3', {
                 strokeDashoffset: 0,
-                duration: animationDuration
+                duration: animationDuration,
+                ease:animationEase
             })
             .to('#circle-4', {
                 strokeDashoffset: 0,
-                duration: animationDuration
+                duration: animationDuration,
+                ease:animationEase
             })
             .to('#logo-4', {
                 opacity: 1,
-                duration: animationDuration
+                duration: animationDuration,
+                ease:animationEase
             })
         }
     })

@@ -16,19 +16,19 @@ const Hero = (props) => {
         const entranceTimeline = gsap.timeline({paused: false})
         entranceTimeline.to('#hero-separator',{
             width: '115%',
-            duration: 1.2,
-            ease: 'Power2.easeInOut'
+            duration: 1,
+            ease: 'Expo.Out'
         },1)
         .to('.hero-title',{
             y: 0,
-            duration: 1.7,
-            ease: 'Power2.easeInOut'
+            duration: 1,
+            ease: 'Expo.Out'
         })
         .to('.hero .sub-title',{
             y: 0,
-            duration: 1.7,
-            ease: 'Power2.easeInOut'
-        },2.2)
+            duration: 1,
+            ease: 'Expo.Out'
+        },1.8)
     })
 
     return(

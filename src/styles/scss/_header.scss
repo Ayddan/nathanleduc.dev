@@ -65,7 +65,7 @@ header{
                 width: 0;
                 height: 2px;
                 background-color: var(--text-color);
-                transition: .3s width ease-in-out;
+                transition: .8s width cubic-bezier(.07,.82,.16,1);
             }
             &:hover{
                 &::after{
