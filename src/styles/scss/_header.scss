@@ -1,79 +1,118 @@
-header{
-    backdrop-filter: blur(20px);
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--header-bg);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: 0.4s background-color, 0.4s backdrop-filter;
+
+  &.header-scrolled {
+    background-color: var(--header-bg-scroll);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.site-title {
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text-color);
+  letter-spacing: -0.5px;
+}
+
+.header-nav {
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: $fs-nav;
+    font-weight: 500;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $accent;
+      transition: 0.8s width cubic-bezier(0.07, 0.82, 0.16, 1);
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  @include respond-to($bp-md) {
     position: fixed;
     top: 0;
-    z-index: 5;
-    width: 100%;
-    padding: 20px 0;
-    .App-header{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: var(--body-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s right;
+
+    &.open {
+      right: 0;
     }
-    .site-title{
-        text-transform: capitalize;
-        font-size: 25px;
-        @media screen and (max-width:750px) {
-            font-size: 20px;
-        }
+
+    ul {
+      flex-direction: column;
+      gap: 40px;
+
+      a {
+        font-size: 22px;
+      }
     }
-    .burger-button{
-        display: none;
-        background: none;
-        border: none;
-        padding: 0;
-        div{
-            width: 50px;
-        }
-        @media screen and (max-width: 750px){
-            display: block;
-        }
-    }
-    nav{
-        @media screen and (max-width: 750px) {
-            position: absolute;
-            right: -120px;
-            top: 100px;
-            padding: 20px;
-            background-color: var(--body-color);
-        }
-        ul{
-            display: flex;
-            column-gap: 20px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            @media screen and (max-width: 750px) {
-                flex-direction: column;
-                row-gap: 20px;
-            }
-            li{
-                display: flex;
-                align-items: center;
-            }
-        }
-        a{
-            position: relative;
-            text-decoration: none;
-            color: var(--text-color);
-            font-size: 18px;
-            &::after{
-                content: '';
-                position: absolute;
-                left: 0;
-                top: calc(100% + 1px);
-                width: 0;
-                height: 2px;
-                background-color: var(--text-color);
-                transition: .8s width cubic-bezier(.07,.82,.16,1);
-            }
-            &:hover{
-                &::after{
-                    left: inherit;
-                    right: 0;
-                    width: 100%;
-                }
-            }
-        }
-    }
+  }
+}
+
+.toggle-theme {
+  background-color: var(--input-color);
+  border-radius: 10px;
+  border: none;
+  @include flex-center;
+  cursor: pointer;
+  transition: 0.3s background-color;
+
+  div {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.burger-button {
+  display: none;
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  @include respond-to($bp-md) {
+    display: block;
+    z-index: 101;
+  }
 }

@@ -1,41 +1,60 @@
-ul.tech-list{
-    margin-top: 60px;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    row-gap: 40px;
-    .tech-element{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        transition: transform .8s cubic-bezier(.07,.82,.16,1);
-        &:hover{
-            transform: scale(1.1);
-            h2{
-                opacity: 1;
-            }
-        }
-        img{
-            width: 100px;
-            margin-bottom: 10px;
-        }
-        h2{
-            text-align: center;
-            opacity: 0;
-            transition: opacity .8s cubic-bezier(.07,.82,.16,1);
-        }
+.tech-list {
+  @include grid-responsive(5, 3, 2);
+  list-style: none;
+  gap: 40px 30px;
+
+  @include respond-to($bp-sm) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+.tech-element {
+  @include flex-center;
+  flex-direction: column;
+  gap: 14px;
+  padding: 30px 15px;
+  border-radius: 12px;
+  transition: 0.4s transform ease;
+
+  &:hover {
+    transform: translateY(-4px);
+
+    .tech-icon {
+      border-color: $accent;
+      color: $accent;
     }
-    @media screen and (max-width: 750px) {
-        grid-template-columns: repeat(2,1fr);
+
+    h3 {
+      opacity: 1;
     }
-    @media screen and (max-width: 450px) {
-        .tech-element{
-            img{
-                width: 70px;
-            }
-            h2{
-                font-size: 18px;
-            }
-        }
-    }
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    opacity: 0.7;
+    transition: 0.3s opacity;
+  }
+}
+
+.tech-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 800;
+  border: 2px solid var(--separator-color);
+  border-radius: 12px;
+  letter-spacing: -0.5px;
+  transition: 0.3s border-color, 0.3s color;
+
+  @include respond-to($bp-md) {
+    width: 44px;
+    height: 44px;
+    font-size: 15px;
+  }
 }

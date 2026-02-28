@@ -1,0 +1,133 @@
+.dark {
+  --body-color: #{$dark-bg};
+  --text-color: #DDDDDD;
+  --text-muted: rgba(221, 221, 221, 0.35);
+  --input-color: #3F3F44;
+  --card-bg: #2A2A2D;
+  --header-bg: rgba(32, 32, 35, 0.0);
+  --header-bg-scroll: rgba(32, 32, 35, 0.85);
+  --separator-color: rgba(255, 255, 255, 0.08);
+}
+
+.light {
+  --body-color: #{$light-bg};
+  --text-color: #{$dark-bg};
+  --text-muted: rgba(32, 32, 35, 0.25);
+  --input-color: #EEEEEE;
+  --card-bg: #FFFFFF;
+  --header-bg: rgba(249, 249, 249, 0.0);
+  --header-bg-scroll: rgba(249, 249, 249, 0.85);
+  --separator-color: rgba(0, 0, 0, 0.08);
+}
+
+body * {
+  transition: 0.1s color, 0.3s background-color;
+}
+
+::selection {
+  color: var(--text-color);
+  background: $accent;
+}
+
+::-moz-selection {
+  color: var(--text-color);
+  background: $accent;
+}
+
+.App {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  font-family: $font-primary;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: $container-max;
+  padding: 0 $container-padding;
+  margin: 0 auto;
+
+  @include respond-to($bp-md) {
+    padding: 0 20px;
+  }
+}
+
+.section {
+  @include section-padding;
+}
+
+.section-title {
+  margin-bottom: 60px;
+
+  h2 {
+    font-size: $fs-section-title;
+    font-weight: 800;
+    line-height: 1.15;
+
+    @include respond-to($bp-md) {
+      font-size: $fs-section-title-mobile;
+    }
+  }
+
+  .separator {
+    background-color: $accent;
+    height: 3px;
+    width: 60px;
+    border: none;
+    margin-top: 12px;
+  }
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--body-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $accent;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: $accent-hover;
+  }
+}
+
+// Firefox scrollbar
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $accent var(--body-color);
+}
+
+.btn {
+  display: inline-block;
+  background-color: $accent;
+  color: var(--text-color);
+  padding: 12px 40px;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s background-color, 0.3s transform;
+
+  &:hover {
+    background-color: $accent-hover;
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  @include respond-to($bp-md) {
+    font-size: 16px;
+    padding: 10px 30px;
+  }
+}

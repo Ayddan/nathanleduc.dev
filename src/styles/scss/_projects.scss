@@ -1,50 +1,64 @@
-.project-card{
-    transform: translateY(0px);
-    transition: transform .8s cubic-bezier(.07,.82,.16,1);
-    &:hover{
-        transform: translateY(10px);
-        .project-name{
-            opacity: 1;
-        }
-    }
-    .project-illustration{
-        display: block;
-        border-radius: 10px;
-        overflow: hidden;
-        aspect-ratio: 16/9;
-        box-shadow: 0 0 16px 0px #1c1c1ecc;
-        img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-    .project-name{
-        display: block;
-        color: var(--text-color);
-        text-decoration: none;
-        text-align: center;
-        font-size: 25px;
-        opacity: 0;
-        transition: opacity .8s cubic-bezier(.07,.82,.16,1);
-    }
+.project-list {
+  @include grid-responsive(2, 2, 1);
+  list-style: none;
+  gap: 40px;
+
+  @include respond-to($bp-md) {
+    gap: 30px;
+  }
 }
 
-.project-list{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 50px;
-    @media screen and (max-width: 1200px) {
-        grid-template-columns: repeat(2,1fr);
-    }
-    @media screen and (max-width: 750px) {
-        grid-template-columns: repeat(1,1fr);
-    }
+.project-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  transition: 0.4s transform ease, 0.4s box-shadow ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  }
 }
 
-#projects{
-    padding-bottom: 200px;
-    .title-wrapper{
-        margin-bottom: 50px;    
-    }
+.project-illustration {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s transform ease;
+  }
+
+  &:hover img {
+    transform: scale(1.04);
+  }
+}
+
+.project-info {
+  padding: 20px 24px 24px;
+}
+
+.project-name {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: 0.3s color;
+  margin-bottom: 6px;
+
+  &:hover {
+    color: $accent;
+  }
+}
+
+.project-description {
+  font-family: $font-body;
+  font-size: $fs-body-small;
+  line-height: 1.5;
+  opacity: 0.65;
 }

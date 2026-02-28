@@ -1,0 +1,39 @@
+// ===== Breakpoints =====
+$bp-sm: 450px;
+$bp-md: 750px;
+$bp-lg: 950px;
+$bp-xl: 1200px;
+$bp-xxl: 1400px;
+
+// ===== Colors =====
+$accent: #FC8166;
+$accent-hover: #dd7159;
+$accent-15: rgba(252, 129, 102, 0.15);
+$dark-bg: #202023;
+$light-bg: #F9F9F9;
+
+// ===== Spacing =====
+$container-max: 1200px;
+$container-padding: 40px;
+$section-padding-y: 120px;
+$section-padding-y-mobile: 80px;
+
+// ===== Typography =====
+$font-primary: 'Greycliff', 'Open Sans', sans-serif;
+$font-body: 'Open Sans', sans-serif;
+
+// Desktop
+$fs-hero-name: 100px;
+$fs-hero-subtitle: 22px;
+$fs-hero-tagline: 14px;
+$fs-section-title: 44px;
+$fs-body: 17px;
+$fs-body-small: 15px;
+$fs-label: 13px;
+$fs-nav: 16px;
+$fs-exp-number: 80px;
+
+// Mobile
+$fs-hero-name-mobile: 52px;
+$fs-section-title-mobile: 32px;
+$fs-exp-number-mobile: 48px;

@@ -1,0 +1,33 @@
+@mixin respond-to($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin grid-responsive($cols-xl, $cols-md, $cols-sm) {
+  display: grid;
+  grid-template-columns: repeat($cols-xl, 1fr);
+  gap: 30px;
+
+  @include respond-to($bp-lg) {
+    grid-template-columns: repeat($cols-md, 1fr);
+  }
+
+  @include respond-to($bp-md) {
+    grid-template-columns: repeat($cols-sm, 1fr);
+  }
+}
+
+@mixin section-padding {
+  padding: $section-padding-y 0;
+
+  @include respond-to($bp-md) {
+    padding: $section-padding-y-mobile 0;
+  }
+}
