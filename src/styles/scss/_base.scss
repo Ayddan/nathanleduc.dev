@@ -48,6 +48,10 @@ body * {
   margin: 0 auto;
 
   @include respond-to($bp-md) {
+    padding: 0 24px;
+  }
+
+  @include respond-to($bp-sm) {
     padding: 0 20px;
   }
 }

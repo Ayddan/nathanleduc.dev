@@ -23,7 +23,8 @@ export default function TechStack() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.tech-element', {
+      const elements = gsap.utils.toArray('.tech-element');
+      gsap.from(elements, {
         y: 40,
         opacity: 0,
         duration: 0.6,
@@ -32,6 +33,9 @@ export default function TechStack() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 80%',
+        },
+        onComplete: () => {
+          gsap.set(elements, { clearProps: 'transform,opacity' });
         },
       });
     }, sectionRef);

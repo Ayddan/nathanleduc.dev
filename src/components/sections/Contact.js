@@ -13,6 +13,7 @@ export default function Contact() {
   const sectionRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
   const [sending, setSending] = useState(false);
+  const loadedAt = useRef(Date.now());
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -42,6 +43,8 @@ export default function Contact() {
       email: formData.get('email'),
       subject: formData.get('subject'),
       message: formData.get('message'),
+      website: formData.get('website'),
+      _t: loadedAt.current,
     };
 
     try {
@@ -86,6 +89,14 @@ export default function Contact() {
           <label htmlFor="message">Message</label>
           <textarea id="message" name="message" required />
         </div>
+        <input
+          type="text"
+          name="website"
+          autoComplete="off"
+          tabIndex={-1}
+          aria-hidden="true"
+          style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0 }}
+        />
         <button type="submit" className="btn" disabled={sending}>
           {sending ? 'Envoi...' : 'Envoyer'}
         </button>

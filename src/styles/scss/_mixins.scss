@@ -25,9 +25,11 @@
 }
 
 @mixin section-padding {
-  padding: $section-padding-y 0;
+  padding-top: $section-padding-y;
+  padding-bottom: $section-padding-y;
 
   @include respond-to($bp-md) {
-    padding: $section-padding-y-mobile 0;
+    padding-top: $section-padding-y-mobile;
+    padding-bottom: $section-padding-y-mobile;
   }
 }

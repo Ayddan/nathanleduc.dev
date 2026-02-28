@@ -1,28 +1,36 @@
 .tech-list {
-  @include grid-responsive(5, 3, 2);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
   gap: 40px 30px;
 
   @include respond-to($bp-sm) {
-    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
 }
 
 .tech-element {
+  width: calc((100% - 4 * 30px) / 5);
   @include flex-center;
   flex-direction: column;
   gap: 14px;
   padding: 30px 15px;
   border-radius: 12px;
-  transition: 0.4s transform ease;
+
+  @include respond-to($bp-lg) {
+    width: calc((100% - 2 * 30px) / 3);
+  }
+
+  @include respond-to($bp-sm) {
+    width: calc((100% - 24px) / 2);
+  }
 
   &:hover {
-    transform: translateY(-4px);
-
     .tech-icon {
       border-color: $accent;
       color: $accent;
+      transform: translateY(-4px);
     }
 
     h3 {
@@ -50,7 +58,7 @@
   border: 2px solid var(--separator-color);
   border-radius: 12px;
   letter-spacing: -0.5px;
-  transition: 0.3s border-color, 0.3s color;
+  transition: 0.3s border-color, 0.3s color, 0.3s transform;
 
   @include respond-to($bp-md) {
     width: 44px;

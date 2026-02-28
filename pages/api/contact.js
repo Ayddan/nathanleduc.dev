@@ -17,9 +17,17 @@ export default function handler(req, res) {
       }
   });
 
+  // Bot protection: honeypot field + minimum 3s before submission
+  if (req.body.website) {
+    return res.status(200).json({ status: 'Message envoyé !' });
+  }
+  if (req.body._t && Date.now() - req.body._t < 3000) {
+    return res.status(200).json({ status: 'Message envoyé !' });
+  }
+
   const name = req.body.name;
   const email = req.body.email.toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) ? req.body.email : null;
-  const message = req.body.message; 
+  const message = req.body.message;
   const mail = {
     from: name,
     to: process.env.SMTP_MAIL,
