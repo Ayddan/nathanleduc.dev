@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
-import Lottie from "react-lottie-player";
+import dynamic from "next/dynamic";
+
+const Lottie = dynamic(() => import("react-lottie-player"), { ssr: false });
 
 // Lottie
 import validationAnimationData from '../assets/lottie/validation.json';

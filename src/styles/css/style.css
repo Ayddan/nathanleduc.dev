@@ -706,7 +706,7 @@ body * {
   }
 }
 
-.toogle-theme {
+.toggle-theme {
   background-color: hsla(0deg, 0%, 0%, 0.68);
   border-radius: 10px;
   border: none;
@@ -714,14 +714,14 @@ body * {
   align-items: center;
   justify-content: center;
 }
-.toogle-theme div {
+.toggle-theme div {
   width: 35px;
   height: 35px;
 }
-.toogle-theme.dark {
+.toggle-theme.dark {
   background-color: hsla(0deg, 0%, 0%, 0.68);
 }
-.toogle-theme.dark {
+.toggle-theme.dark {
   background-color: hsla(0deg, 0%, 0%, 0.68);
 }
 

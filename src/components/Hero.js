@@ -50,22 +50,22 @@ const Hero = (props) => {
             <ul className='social-list'>
                 <li>
                     <a target='_blank' rel="noreferrer" href='https://twitter.com/NathanLeduc5'>
-                        <img src={props.theme === 'light' ?  twitterLightSvg.src : twitterDarkSvg.src}/>
+                        <img src={props.theme === 'light' ?  twitterLightSvg.src : twitterDarkSvg.src} alt="Twitter"/>
                     </a>
                 </li>
                 <li>
                     <a target='_blank' rel="noreferrer" href='https://www.linkedin.com/in/nathan-leduc-349561146/'>
-                        <img src={props.theme === 'light' ?  linkedinLightSvg.src : linkedinDarkSvg.src}/>
+                        <img src={props.theme === 'light' ?  linkedinLightSvg.src : linkedinDarkSvg.src} alt="LinkedIn"/>
                     </a>
                 </li>
                 <li>
                     <a target='_blank' rel="noreferrer" href='https://github.com/Ayddan'>
-                        <img src={props.theme === 'light' ?  githubLightSvg.src : githubDarkSvg.src}/>
+                        <img src={props.theme === 'light' ?  githubLightSvg.src : githubDarkSvg.src} alt="GitHub"/>
                     </a>
                 </li>
                 {/* <li>
                     <a>
-                        <img src={props.theme === 'light' ?  youtubeLightSvg : youtubeDarkSvg}/>
+                        <img src={props.theme === 'light' ?  youtubeLightSvg : youtubeDarkSvg} alt="YouTube"/>
                     </a>
                 </li> */}
             </ul>

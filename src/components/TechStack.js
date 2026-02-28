@@ -26,9 +26,9 @@ import wpSvgDark from '../assets/svg/technos-logos/dark/wp.svg'
 const TechStack = ({theme})=> {
     return(
         <section className="container" id="tech-stack">
-            <div class="title-wrapper">
-                <h2 class="title-with-decoration">Tech Stack</h2>
-                <hr class="separator"/>
+            <div className="title-wrapper">
+                <h2 className="title-with-decoration">Tech Stack</h2>
+                <hr className="separator"/>
             </div>
             <ul className="tech-list">
                 <li className="tech-element">

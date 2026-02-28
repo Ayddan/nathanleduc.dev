@@ -4,8 +4,8 @@ export default function handler(req, res) {
   const contactEmail = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: process.env.REACT_APP_SMTP_MAIL,
-        pass: process.env.REACT_APP_SMTP_PASSWORD,
+        user: process.env.SMTP_MAIL,
+        pass: process.env.SMTP_PASSWORD,
     },
   });
 
@@ -22,7 +22,7 @@ export default function handler(req, res) {
   const message = req.body.message; 
   const mail = {
     from: name,
-    to: process.env.REACT_APP_SMTP_MAIL,
+    to: process.env.SMTP_MAIL,
     subject: "Contact Depuis Portfolio",
     html: `<p>Name: ${name}</p>
           <p>Email: ${email}</p>
