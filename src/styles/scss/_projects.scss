@@ -1,64 +1,120 @@
 .project-list {
-  @include grid-responsive(2, 2, 1);
-  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-item {
+  display: flex;
+  align-items: flex-start;
   gap: 40px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--separator-color);
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
 
   @include respond-to($bp-md) {
-    gap: 30px;
+    gap: 20px;
+    padding: 30px 0;
   }
 }
 
-.project-card {
-  border-radius: 16px;
-  overflow: hidden;
-  background-color: var(--card-bg);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-  transition: 0.4s transform ease, 0.4s box-shadow ease;
+.project-number {
+  font-family: $font-body;
+  font-size: $fs-exp-number;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  min-width: 100px;
 
-  &:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  @include respond-to($bp-md) {
+    font-size: $fs-exp-number-mobile;
+    min-width: 60px;
+  }
+
+  @include respond-to($bp-sm) {
+    font-size: 36px;
+    min-width: 45px;
   }
 }
 
-.project-illustration {
-  display: block;
+.project-content {
+  flex: 1;
+  padding-top: 8px;
+
+  @include respond-to($bp-md) {
+    padding-top: 4px;
+  }
+}
+
+.project-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+
+  a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: 0.3s color;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  @include respond-to($bp-md) {
+    font-size: 18px;
+  }
+}
+
+.project-cover {
+  margin-bottom: 16px;
+  border-radius: 12px;
   overflow: hidden;
-  aspect-ratio: 16 / 10;
+  max-width: 480px;
+
+  a {
+    display: block;
+  }
 
   img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.5s transform ease;
+    height: auto;
+    display: block;
+    transition: 0.4s transform ease;
   }
 
   &:hover img {
-    transform: scale(1.04);
-  }
-}
-
-.project-info {
-  padding: 20px 24px 24px;
-}
-
-.project-name {
-  display: block;
-  font-size: 18px;
-  font-weight: 700;
-  text-decoration: none;
-  color: var(--text-color);
-  transition: 0.3s color;
-  margin-bottom: 6px;
-
-  &:hover {
-    color: $accent;
+    transform: scale(1.03);
   }
 }
 
 .project-description {
   font-family: $font-body;
   font-size: $fs-body-small;
-  line-height: 1.5;
-  opacity: 0.65;
+  line-height: 1.65;
+  opacity: 0.8;
+  max-width: 550px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.project-tag {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 14px;
+  border-radius: 20px;
+  background-color: $accent-15;
+  color: $accent;
 }

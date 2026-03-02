@@ -5,7 +5,6 @@ import BurgerMenu from '../ui/BurgerMenu';
 const NAV_LINKS = [
   { label: 'A propos', href: '#about' },
   { label: 'Stack', href: '#stack' },
-  { label: 'Parcours', href: '#experiences' },
   { label: 'Projets', href: '#projects' },
   { label: 'Contact', href: '#contact' },
 ];

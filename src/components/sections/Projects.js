@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import SectionTitle from '../ui/SectionTitle';
-import ProjectCard from '../ui/ProjectCard';
+import ProjectItem from '../ui/ProjectItem';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,16 +23,18 @@ export default function Projects() {
     if (projects.length === 0) return;
 
     const ctx = gsap.context(() => {
-      gsap.from('.project-card', {
-        y: 40,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.12,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 80%',
-        },
+      const items = gsap.utils.toArray('.project-item');
+      items.forEach((item) => {
+        gsap.from(item, {
+          x: -30,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 85%',
+          },
+        });
       });
     }, sectionRef);
 
@@ -42,11 +44,27 @@ export default function Projects() {
   return (
     <section className="section container" id="projects" ref={sectionRef}>
       <SectionTitle>Mes projets</SectionTitle>
-      <ul className="project-list">
-        {projects.map((project, i) => (
-          <ProjectCard key={i} project={project} />
-        ))}
-      </ul>
+      <div className="project-list">
+        {projects.map((project, i) => {
+          const name = project.properties?.Nom?.title?.[0]?.plain_text || 'Projet';
+          const description = project.properties?.Description?.rich_text?.[0]?.plain_text || '';
+          const url = project.properties?.url?.url || '#';
+          const cover = project.cover?.file?.url || project.cover?.external?.url || '';
+          const tags = project.properties?.Tags?.multi_select?.map(t => t.name) || [];
+
+          return (
+            <ProjectItem
+              key={i}
+              index={i}
+              name={name}
+              description={description}
+              url={url}
+              cover={cover}
+              tags={tags}
+            />
+          );
+        })}
+      </div>
     </section>
   );
 }
