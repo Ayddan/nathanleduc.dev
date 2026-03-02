@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm uninstall:*)",
+      "Bash(git push:*)",
+      "Bash(git merge:*)",
+      "Bash(git branch:*)",
+      "Bash(ls \"c:/Dev/nathanleduc.dev/public/\"schertz*)"
+    ]
+  }
+}

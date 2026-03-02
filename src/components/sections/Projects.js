@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import SectionTitle from '../ui/SectionTitle';
@@ -6,22 +6,20 @@ import ProjectItem from '../ui/ProjectItem';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const PROJECTS = [
+  {
+    name: 'Shirts',
+    description: '',
+    url: '#',
+    cover: '/schertz.jpg',
+    tags: [],
+  },
+];
+
 export default function Projects() {
-  const [projects, setProjects] = useState([]);
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    fetch('/api/project-infos')
-      .then(res => res.json())
-      .then(data => {
-        if (data.results) setProjects(data.results);
-      })
-      .catch(() => {});
-  }, []);
-
-  useEffect(() => {
-    if (projects.length === 0) return;
-
     const ctx = gsap.context(() => {
       const items = gsap.utils.toArray('.project-item');
       items.forEach((item) => {
@@ -39,31 +37,19 @@ export default function Projects() {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, [projects]);
+  }, []);
 
   return (
     <section className="section container" id="projects" ref={sectionRef}>
       <SectionTitle>Mes projets</SectionTitle>
       <div className="project-list">
-        {projects.map((project, i) => {
-          const name = project.properties?.Nom?.title?.[0]?.plain_text || 'Projet';
-          const description = project.properties?.Description?.rich_text?.[0]?.plain_text || '';
-          const url = project.properties?.url?.url || '#';
-          const cover = project.cover?.file?.url || project.cover?.external?.url || '';
-          const tags = project.properties?.Tags?.multi_select?.map(t => t.name) || [];
-
-          return (
-            <ProjectItem
-              key={i}
-              index={i}
-              name={name}
-              description={description}
-              url={url}
-              cover={cover}
-              tags={tags}
-            />
-          );
-        })}
+        {PROJECTS.map((project, i) => (
+          <ProjectItem
+            key={i}
+            index={i}
+            {...project}
+          />
+        ))}
       </div>
     </section>
   );
